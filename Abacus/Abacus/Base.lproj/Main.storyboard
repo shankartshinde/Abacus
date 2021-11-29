@@ -46,44 +46,52 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CQS-OC-AZq">
-                                <rect key="frame" x="20" y="326.5" width="280" height="72"/>
+                                <rect key="frame" x="20" y="308.5" width="280" height="98"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AGC-K4-2tz">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYG-wa-Bdn">
-                                                <rect key="frame" x="0.0" y="0.0" width="130" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="44"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                                <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="17"/>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="30"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyU-9d-8Nt">
-                                                <rect key="frame" x="150" y="0.0" width="130" height="31"/>
+                                                <rect key="frame" x="150" y="0.0" width="130" height="44"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                                <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="17"/>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="30"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dYl-6t-qlv">
-                                        <rect key="frame" x="0.0" y="41" width="280" height="31"/>
+                                        <rect key="frame" x="0.0" y="54" width="280" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sT4-mW-OBY">
-                                                <rect key="frame" x="0.0" y="0.0" width="130" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="44"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                                <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="17"/>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="30"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtT-0Q-POA">
-                                                <rect key="frame" x="150" y="0.0" width="130" height="31"/>
+                                                <rect key="frame" x="150" y="0.0" width="130" height="44"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                                <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="17"/>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="30"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tvh-zw-maI">
-                                        <rect key="frame" x="0.0" y="72" width="280" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="98" width="280" height="0.0"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFS-8K-mVU">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="0.0"/>
@@ -126,16 +134,44 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dc5-PS-vwA">
+                                <rect key="frame" x="20" y="426.5" width="280" height="121"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbsUp" translatesAutoresizingMaskIntoConstraints="NO" id="AQo-2h-FpY">
+                                        <rect key="frame" x="110" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="RPb-8e-cTN"/>
+                                            <constraint firstAttribute="width" constant="60" id="zrR-VO-26d"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your total correct answer: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qse-1q-0pd">
+                                        <rect key="frame" x="40" y="70" width="200" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your total wrong answer: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFQ-3s-8GD">
+                                        <rect key="frame" x="44" y="100.5" width="192.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.86532619202097893" green="0.96525757047202787" blue="0.93264838952657347" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="0mw-hm-Ycc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Uk-P9-dLQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y5d-fK-F9b" secondAttribute="trailing" constant="20" id="FSl-Ug-5ti"/>
-                            <constraint firstItem="CQS-OC-AZq" firstAttribute="top" secondItem="0mw-hm-Ycc" secondAttribute="bottom" constant="48" id="O3j-Pz-z9h"/>
+                            <constraint firstItem="dc5-PS-vwA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FmS-6a-PJJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dc5-PS-vwA" secondAttribute="trailing" constant="20" id="Lf8-LD-Gdh"/>
+                            <constraint firstItem="CQS-OC-AZq" firstAttribute="top" secondItem="0mw-hm-Ycc" secondAttribute="bottom" constant="30" id="O3j-Pz-z9h"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CQS-OC-AZq" secondAttribute="trailing" constant="20" id="Px7-p2-C0O"/>
+                            <constraint firstItem="dc5-PS-vwA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QoB-vE-6po"/>
                             <constraint firstItem="Y5d-fK-F9b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="TY1-Ue-De4"/>
                             <constraint firstItem="CQS-OC-AZq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Xmu-tk-FER"/>
+                            <constraint firstItem="dc5-PS-vwA" firstAttribute="top" secondItem="CQS-OC-AZq" secondAttribute="bottom" constant="20" id="qgH-9E-30m"/>
                             <constraint firstItem="Y5d-fK-F9b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vWe-ZF-FPN"/>
                             <constraint firstItem="0mw-hm-Ycc" firstAttribute="top" secondItem="Y5d-fK-F9b" secondAttribute="bottom" constant="40" id="xUN-lY-ir8"/>
                         </constraints>
@@ -152,6 +188,10 @@
                         <outlet property="option4Btn" destination="RtT-0Q-POA" id="yVa-gC-cHT"/>
                         <outlet property="pauseBtn" destination="Xo4-hQ-EOA" id="qVq-Bz-z6y"/>
                         <outlet property="resetBtn" destination="9Hi-bQ-Otm" id="nea-SA-omJ"/>
+                        <outlet property="resultCorrectAnswerlabel" destination="Qse-1q-0pd" id="Epb-PB-2Ok"/>
+                        <outlet property="resultImageView" destination="AQo-2h-FpY" id="E6F-Bs-RZ1"/>
+                        <outlet property="resultStackView" destination="dc5-PS-vwA" id="8Hc-xR-pGG"/>
+                        <outlet property="resultWrongAnswerlabel" destination="mFQ-3s-8GD" id="wQd-hJ-TnV"/>
                         <outlet property="skipBtn" destination="sFS-8K-mVU" id="y0x-wA-VMm"/>
                         <outlet property="startBtn" destination="jmX-zz-V7K" id="uEz-cV-WHX"/>
                         <outlet property="timeLabel" destination="HKo-E1-4e6" id="E7p-O7-ybH"/>
@@ -219,6 +259,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="thumbsUp" width="840" height="945"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

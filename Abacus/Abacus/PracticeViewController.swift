@@ -29,6 +29,11 @@ class PracticeViewController: UIViewController {
     @IBOutlet weak var pauseBtn: UIButton!
     @IBOutlet weak var resetBtn: UIButton!
     
+    @IBOutlet weak var resultCorrectAnswerlabel: UILabel!
+    @IBOutlet weak var resultWrongAnswerlabel: UILabel!
+    @IBOutlet weak var resultStackView: UIStackView!
+    @IBOutlet weak var resultImageView: UIImageView!
+    
     var currentQuestionNumber = 0
     var recordOfSum: [Sum?] = []
     
@@ -53,6 +58,7 @@ class PracticeViewController: UIViewController {
         resetBtn.addTarget(self, action: #selector(restartButtonTapped(sender: )), for: UIControl.Event.touchUpInside)
         
         pauseBtn.isEnabled = false
+        resultStackView.isHidden = true
         startButtonTapped(sender: startBtn)
         let firstSum = getNextQuestion(at: currentQuestionNumber)
         setupDataOnUI(sum: firstSum)
@@ -85,7 +91,6 @@ class PracticeViewController: UIViewController {
                 print("Total Number of correct : \(correctAnswerList.count)")
                 
                 print("Total attempted         : \(skippedList.count + wrongList.count + correctAnswerList.count)")
-                currentQuestionNumber = 0
                 var yourResult = [
                     "paperName" :  title,
                     "date": getTimeStampDateString(),
@@ -97,6 +102,16 @@ class PracticeViewController: UIViewController {
                 myOwnUserDefault?.setValue(yourResult, forKey: getTimeStampDateStringForAsKey())
                 myOwnUserDefault?.synchronize()
                 print(yourResult)
+                
+                resultStackView.isHidden = false
+                if 45 < correctAnswerList.count &&  currentQuestionNumber < 240 {
+                    resultImageView.image = UIImage(named: "thumbsUp")
+                } else {
+                    resultImageView.image = UIImage(named: "thumbsDown")
+                }
+                resultCorrectAnswerlabel.text = "Your total correct answer: \(correctAnswerList.count.description)"
+                resultWrongAnswerlabel.text = "Your total wrong answer: \(wrongList.count.description)"
+                currentQuestionNumber = 0
             }
             
         }
@@ -159,6 +174,7 @@ extension PracticeViewController {
         timeLabel.text = timeString(time: TimeInterval(seconds))
         isTimerRunning = false
         pauseBtn.isEnabled = false
+        resultStackView.isHidden = true
     }
     
     @objc func updateTimer() {
