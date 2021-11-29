@@ -1,0 +1,33 @@
+{
+   "data":{
+      "sumes":[
+         {
+            "id":1,
+            "row1":7,
+            "row2":-5,
+            "row3":2,
+            "row4":-3,
+            "option1":5,
+            "option2":2,
+            "option3":1,
+            "option4":3,
+            "answer":1,
+            "userSelectedAnswer":-1
+         },
+         {
+            "id":2,
+            "row1":8,
+            "row2":1,
+            "row3":-3,
+            "row4":-6,
+            "option1":1,
+            "option2":3,
+            "option3":2,
+            "option4":0,
+            "answer":0,
+            "userSelectedAnswer":-1
+         }
+      ]
+   }
+}
+
