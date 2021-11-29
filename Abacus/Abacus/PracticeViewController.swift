@@ -34,6 +34,8 @@ class PracticeViewController: UIViewController {
     @IBOutlet weak var resultStackView: UIStackView!
     @IBOutlet weak var resultImageView: UIImageView!
     
+    @IBOutlet weak var yourOnSumLabel: UILabel!
+    
     var currentQuestionNumber = 0
     var recordOfSum: [Sum?] = []
     
@@ -65,6 +67,7 @@ class PracticeViewController: UIViewController {
     }
     
     func setupDataOnUI(sum: Sum?) {
+        yourOnSumLabel.text = "Current sum is: \(sum?.id ?? 0)"
         if let firstSum =  sum {
 
             label1.text = "\(firstSum.row1 ?? 0)"
@@ -111,7 +114,7 @@ class PracticeViewController: UIViewController {
                 }
                 resultCorrectAnswerlabel.text = "Your total correct answer: \(correctAnswerList.count.description)"
                 resultWrongAnswerlabel.text = "Your total wrong answer: \(wrongList.count.description)"
-                currentQuestionNumber = 0
+//                currentQuestionNumber = 0
             }
             
         }
