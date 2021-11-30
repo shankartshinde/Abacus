@@ -107,7 +107,7 @@ class PracticeViewController: UIViewController {
                 print(yourResult)
                 
                 resultStackView.isHidden = false
-                if 45 < correctAnswerList.count &&  currentQuestionNumber < 240 {
+                if 75 <= correctAnswerList.count &&  seconds <= 240 {
                     resultImageView.image = UIImage(named: "thumbsUp")
                 } else {
                     resultImageView.image = UIImage(named: "thumbsDown")

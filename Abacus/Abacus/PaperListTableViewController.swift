@@ -73,7 +73,7 @@ class PaperListTableViewController: UITableViewController {
         do {
             let data = try Data(contentsOf: url)
             let abacusRootModel = try JSONDecoder().decode(AbacusRoot.self, from: data)
-            print(abacusRootModel)
+            //print(abacusRootModel)
             return abacusRootModel
         } catch {
             print(error)
