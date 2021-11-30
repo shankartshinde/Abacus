@@ -23,6 +23,7 @@
 		D91ED4F9275497E1002B1505 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91ED4F8275497E1002B1505 /* DateUtils.swift */; };
 		D91ED5052756500A002B1505 /* paper6.json in Resources */ = {isa = PBXBuildFile; fileRef = D91ED5042756500A002B1505 /* paper6.json */; };
 		D91ED50827565E91002B1505 /* paper7.json in Resources */ = {isa = PBXBuildFile; fileRef = D91ED50727565E91002B1505 /* paper7.json */; };
+		D91ED50B27567A42002B1505 /* Paper8.json in Resources */ = {isa = PBXBuildFile; fileRef = D91ED50A27567A42002B1505 /* Paper8.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		D91ED4F8275497E1002B1505 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		D91ED5042756500A002B1505 /* paper6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = paper6.json; sourceTree = "<group>"; };
 		D91ED50727565E91002B1505 /* paper7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = paper7.json; sourceTree = "<group>"; };
+		D91ED50A27567A42002B1505 /* Paper8.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Paper8.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				D91ED4F427548D4A002B1505 /* paper5.json */,
 				D91ED5042756500A002B1505 /* paper6.json */,
 				D91ED50727565E91002B1505 /* paper7.json */,
+				D91ED50A27567A42002B1505 /* Paper8.json */,
 			);
 			path = MockPaper;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				D91ED50827565E91002B1505 /* paper7.json in Resources */,
 				D91ED4CA2753E0AA002B1505 /* Assets.xcassets in Resources */,
 				D91ED4C82753E0A9002B1505 /* Main.storyboard in Resources */,
+				D91ED50B27567A42002B1505 /* Paper8.json in Resources */,
 				D91ED4F127548D37002B1505 /* paper4.json in Resources */,
 				D91ED4EB27548D0D002B1505 /* paper2.json in Resources */,
 				D91ED4EE27548D1D002B1505 /* paper3.json in Resources */,
