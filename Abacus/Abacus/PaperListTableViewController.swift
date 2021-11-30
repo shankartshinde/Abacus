@@ -8,7 +8,7 @@
 import UIKit
 
 class PaperListTableViewController: UITableViewController {
-    let papersName = ["Paper1","Paper2","Paper3","Paper4","Paper5"]
+    let papersName = ["Paper1","Paper2","Paper3","Paper4","Paper5","Paper6","Paper7"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
