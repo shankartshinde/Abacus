@@ -19,14 +19,9 @@ class PaperListTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         title = "Papers"
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
         
-        print(getTimeStampDateString())
-        print("======== UserDefaults.standard ========")
-        let myOwnUserDefault = UserDefaults(suiteName: "AbacusRecords")
-        print( myOwnUserDefault?.dictionaryRepresentation())
-        print("======== UserDefaults.standard ========")
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Result", style: UIBarButtonItem.Style.done, target: self, action: #selector(showResultButtonTapped))
     }
     
     // MARK: - Table view data source
@@ -79,6 +74,15 @@ class PaperListTableViewController: UITableViewController {
             print(error)
         }
         return nil
+    }
+    
+    @objc func showResultButtonTapped() {
+        print("showResultButtonTapped")
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let resultVC = storyBoard.instantiateViewController(identifier: "ResultTableViewController") as! ResultTableViewController
+        resultVC.title = "Result"
+        navigationController?.pushViewController(resultVC, animated: true)
+
     }
     
 }

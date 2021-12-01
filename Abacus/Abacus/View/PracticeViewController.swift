@@ -14,12 +14,13 @@ class PracticeViewController: UIViewController {
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
     @IBOutlet weak var label4: UILabel!
-    
+    @IBOutlet weak var digitLabelStackView: UIStackView!
     
     @IBOutlet weak var option1Btn: UIButton!
     @IBOutlet weak var option2Btn: UIButton!
     @IBOutlet weak var option3Btn: UIButton!
     @IBOutlet weak var option4Btn: UIButton!
+    @IBOutlet weak var optionBtnStackView: UIStackView!
     
     
     @IBOutlet weak var skipBtn: UIButton!
@@ -43,6 +44,7 @@ class PracticeViewController: UIViewController {
     var timer = Timer()
     var isTimerRunning = false //This will be used to make sure only one timer is created at a time.
     var resumeTapped = false
+    var totalTimeLimitInSecond = 180
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +70,7 @@ class PracticeViewController: UIViewController {
     
     func setupDataOnUI(sum: Sum?) {
         yourOnSumLabel.text = "Current sum is: \(sum?.id ?? 0)"
-        if let firstSum =  sum {
+        if let firstSum =  sum, seconds <= totalTimeLimitInSecond {
 
             label1.text = "\(firstSum.row1 ?? 0)"
             label2.text = "\(firstSum.row2 ?? 0)"
@@ -82,9 +84,13 @@ class PracticeViewController: UIViewController {
         } else {
             print("Thanks you for attempting")
             
-            if currentQuestionNumber == abacusRootModel.data?.sumes?.count ?? 0 {
+//            if currentQuestionNumber == abacusRootModel.data?.sumes?.count ?? 0 {
+            if seconds <= totalTimeLimitInSecond {
+                
                 print("You reached end")
                 pauseButtonTapped(sender: pauseBtn)
+                digitLabelStackView.isHidden = true
+                optionBtnStackView.isHidden = true
                 
                 let skippedList = recordOfSum.filter { $0?.isSumSkipped == true}
                 let wrongList = recordOfSum.filter { $0?.answer != $0?.userSelectedAnswer && $0?.isSumSkipped != true}
@@ -107,7 +113,7 @@ class PracticeViewController: UIViewController {
                 print(yourResult)
                 
                 resultStackView.isHidden = false
-                if 75 <= correctAnswerList.count &&  seconds <= 240 {
+                if 75 <= correctAnswerList.count &&  seconds <= 180 {
                     resultImageView.image = UIImage(named: "thumbsUp")
                 } else {
                     resultImageView.image = UIImage(named: "thumbsDown")
@@ -132,7 +138,11 @@ class PracticeViewController: UIViewController {
         }
         recordOfSum.append(sum)
         currentQuestionNumber += 1
-        setupDataOnUI(sum: getNextQuestion(at: currentQuestionNumber))
+        if seconds <= totalTimeLimitInSecond {
+            setupDataOnUI(sum: getNextQuestion(at: currentQuestionNumber))
+        } else {
+            setupDataOnUI(sum: nil)
+        }
     }
     
     @objc func onClickSkipAnswerBtn(sender: UIButton) {
@@ -178,11 +188,17 @@ extension PracticeViewController {
         isTimerRunning = false
         pauseBtn.isEnabled = false
         resultStackView.isHidden = true
+        digitLabelStackView.isHidden = false
+        optionBtnStackView.isHidden = false
     }
     
     @objc func updateTimer() {
         seconds += 1     //This will decrement(count down)the seconds.
         timeLabel.text = timeString(time: TimeInterval(seconds)) //"\(seconds)" //This will update the label.
+        if totalTimeLimitInSecond <= seconds {
+            setupDataOnUI(sum: nil)
+        }
+
     }
     
     func runTimer() {

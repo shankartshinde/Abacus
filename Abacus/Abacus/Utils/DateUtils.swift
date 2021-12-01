@@ -26,3 +26,15 @@ func getTimeStampDateStringForAsKey() -> String {
     let strDate = dateFormatter.string(from: date)
     return strDate
 }
+
+func datePrint() {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateStyle = .short
+    
+    print(getTimeStampDateString())
+    print("======== UserDefaults.standard ========")
+    let myOwnUserDefault = UserDefaults(suiteName: "AbacusRecords")
+    print( myOwnUserDefault?.dictionaryRepresentation())
+    print("======== UserDefaults.standard ========")
+
+}

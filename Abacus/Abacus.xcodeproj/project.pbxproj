@@ -24,6 +24,8 @@
 		D91ED5052756500A002B1505 /* paper6.json in Resources */ = {isa = PBXBuildFile; fileRef = D91ED5042756500A002B1505 /* paper6.json */; };
 		D91ED50827565E91002B1505 /* paper7.json in Resources */ = {isa = PBXBuildFile; fileRef = D91ED50727565E91002B1505 /* paper7.json */; };
 		D91ED50B27567A42002B1505 /* Paper8.json in Resources */ = {isa = PBXBuildFile; fileRef = D91ED50A27567A42002B1505 /* Paper8.json */; };
+		D91ED5172757A4F8002B1505 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91ED5162757A4F8002B1505 /* ResultTableViewController.swift */; };
+		D91ED51A2757B299002B1505 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91ED5192757B299002B1505 /* ResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		D91ED5042756500A002B1505 /* paper6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = paper6.json; sourceTree = "<group>"; };
 		D91ED50727565E91002B1505 /* paper7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = paper7.json; sourceTree = "<group>"; };
 		D91ED50A27567A42002B1505 /* Paper8.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Paper8.json; sourceTree = "<group>"; };
+		D91ED5162757A4F8002B1505 /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
+		D91ED5192757B299002B1505 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,17 +82,16 @@
 		D91ED4BF2753E0A9002B1505 /* Abacus */ = {
 			isa = PBXGroup;
 			children = (
+				D91ED5152757A4D2002B1505 /* Model */,
+				D91ED5142757A4BB002B1505 /* View */,
 				D91ED4F7275497C9002B1505 /* Utils */,
 				D91ED4E927548CB6002B1505 /* MockPaper */,
 				D91ED4C02753E0A9002B1505 /* AppDelegate.swift */,
 				D91ED4C22753E0A9002B1505 /* SceneDelegate.swift */,
-				D91ED4C42753E0A9002B1505 /* PracticeViewController.swift */,
 				D91ED4C62753E0A9002B1505 /* Main.storyboard */,
 				D91ED4C92753E0AA002B1505 /* Assets.xcassets */,
 				D91ED4CB2753E0AA002B1505 /* LaunchScreen.storyboard */,
 				D91ED4CE2753E0AA002B1505 /* Info.plist */,
-				D91ED4D52753E4AE002B1505 /* PaperModel.swift */,
-				D91ED4D827546952002B1505 /* PaperListTableViewController.swift */,
 			);
 			path = Abacus;
 			sourceTree = "<group>";
@@ -114,6 +117,25 @@
 				D91ED4F8275497E1002B1505 /* DateUtils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		D91ED5142757A4BB002B1505 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D91ED4C42753E0A9002B1505 /* PracticeViewController.swift */,
+				D91ED4D827546952002B1505 /* PaperListTableViewController.swift */,
+				D91ED5162757A4F8002B1505 /* ResultTableViewController.swift */,
+				D91ED5192757B299002B1505 /* ResultTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D91ED5152757A4D2002B1505 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D91ED4D52753E4AE002B1505 /* PaperModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,7 +220,9 @@
 				D91ED4F9275497E1002B1505 /* DateUtils.swift in Sources */,
 				D91ED4D62753E4AE002B1505 /* PaperModel.swift in Sources */,
 				D91ED4C52753E0A9002B1505 /* PracticeViewController.swift in Sources */,
+				D91ED5172757A4F8002B1505 /* ResultTableViewController.swift in Sources */,
 				D91ED4C12753E0A9002B1505 /* AppDelegate.swift in Sources */,
+				D91ED51A2757B299002B1505 /* ResultTableViewCell.swift in Sources */,
 				D91ED4C32753E0A9002B1505 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
