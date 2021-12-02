@@ -27,6 +27,14 @@ func getTimeStampDateStringForAsKey() -> String {
     return strDate
 }
 
+func getCurrentDeviceTime()-> String {
+    let dateFormatter = DateFormatter()
+    // US English Locale (en_US)
+    dateFormatter.locale = Locale(identifier: "en_US")
+    dateFormatter.timeStyle = .short
+    return dateFormatter.string(from: Date()) //6:45 AM
+}
+
 func datePrint() {
     let dateFormatter = DateFormatter()
     dateFormatter.dateStyle = .short

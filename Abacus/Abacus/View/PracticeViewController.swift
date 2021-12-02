@@ -105,7 +105,8 @@ class PracticeViewController: UIViewController {
                     "date": getTimeStampDateString(),
                     "totalTime" : timeLabel.text,
                     "correctAnswers" : correctAnswerList.count.description,
-                    "wrongAnswers" : wrongList.count.description
+                    "wrongAnswers" : wrongList.count.description,
+                    "currentDeviceTime" : getCurrentDeviceTime()
                 ]
                 let myOwnUserDefault = UserDefaults(suiteName: "AbacusRecords")
                 myOwnUserDefault?.setValue(yourResult, forKey: getTimeStampDateStringForAsKey())

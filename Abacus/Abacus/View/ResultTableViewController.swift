@@ -72,7 +72,9 @@ class ResultTableViewController: UITableViewController {
             //["correctAnswers": "0", "totalTime": "00:08", "wrongAnswers": "2", "paperName": "Paper5", "date": "29.11.2021"]
             cell.dateLabel.text = "Date: \(resultRecord["date"] ?? "")"
             cell.correctAnswersLabel.text = "Correct: \(resultRecord["correctAnswers"] ?? "")"
-            cell.totalTimeLabel.text = "Time: \(resultRecord["totalTime"] ?? "")"
+            //cell.totalTimeLabel.text = "Time: \(resultRecord["totalTime"] ?? "")"
+            cell.totalTimeLabel.text = "Time: \(resultRecord["currentDeviceTime"] ?? "")"
+            
             let correctAnswer = Int(resultRecord["correctAnswers"] ?? "") ?? 0
             let wrongAnswer = Int(resultRecord["wrongAnswers"] ?? "") ?? 0
             let totalAttemptedAnswer = correctAnswer + wrongAnswer
