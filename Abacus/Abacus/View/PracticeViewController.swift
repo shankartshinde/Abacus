@@ -37,6 +37,8 @@ class PracticeViewController: UIViewController {
     
     @IBOutlet weak var yourOnSumLabel: UILabel!
     
+    @IBOutlet weak var answerLabel: UILabel!
+    
     var currentQuestionNumber = 0
     var recordOfSum: [Sum?] = []
     
@@ -55,7 +57,7 @@ class PracticeViewController: UIViewController {
         option3Btn.addTarget(self, action: #selector(onClickAnswerBtn(sender: )), for: UIControl.Event.touchUpInside)
         option4Btn.addTarget(self, action: #selector(onClickAnswerBtn(sender: )), for: UIControl.Event.touchUpInside)
         
-        skipBtn.addTarget(self, action: #selector(onClickSkipAnswerBtn(sender: )), for: UIControl.Event.touchUpInside)
+        //skipBtn.addTarget(self, action: #selector(onClickSkipAnswerBtn(sender: )), for: UIControl.Event.touchUpInside)
         
         startBtn.addTarget(self, action: #selector(startButtonTapped(sender: )), for: UIControl.Event.touchUpInside)
         pauseBtn.addTarget(self, action: #selector(pauseButtonTapped(sender: )), for: UIControl.Event.touchUpInside)
@@ -65,17 +67,79 @@ class PracticeViewController: UIViewController {
         resultStackView.isHidden = true
         startButtonTapped(sender: startBtn)
         let firstSum = getNextQuestion(at: currentQuestionNumber)
+//        digitLabelStackView.backgroundColor = .black
+//        optionBtnStackView.backgroundColor = .black
+        applyColor()
         setupDataOnUI(sum: firstSum)
     }
     
+    func applyColor() {
+        view.backgroundColor = .black
+
+        label1.textColor = .white
+        label2.textColor = .white
+        label3.textColor = .white
+        label4.textColor = .white
+        
+        option1Btn.setTitleColor(.white, for: UIControl.State.normal)
+        option2Btn.setTitleColor(.white, for: UIControl.State.normal)
+        option3Btn.setTitleColor(.white, for: UIControl.State.normal)
+        option4Btn.setTitleColor(.white, for: UIControl.State.normal)
+        
+        timeLabel.textColor = .white
+        startBtn.setTitleColor(.white, for: UIControl.State.normal)
+        pauseBtn.setTitleColor(.white, for: UIControl.State.normal)
+        resetBtn.setTitleColor(.white, for: UIControl.State.normal)
+        
+        resultCorrectAnswerlabel.textColor = .white
+        resultWrongAnswerlabel.textColor = .white
+        
+        yourOnSumLabel.textColor = .white
+        answerLabel.textColor = .white
+        
+        option1Btn.layer.borderColor = UIColor.green.cgColor
+        option1Btn.layer.borderWidth = 2.0
+        
+        option2Btn.layer.borderColor = UIColor.green.cgColor
+        option2Btn.layer.borderWidth = 2.0
+        
+        option3Btn.layer.borderColor = UIColor.green.cgColor
+        option3Btn.layer.borderWidth = 2.0
+        
+        option4Btn.layer.borderColor = UIColor.green.cgColor
+        option4Btn.layer.borderWidth = 2.0
+        
+        label3.isHidden = true
+        label4.isHidden = true
+    }
+    
     func setupDataOnUI(sum: Sum?) {
-        yourOnSumLabel.text = "Current sum is: \(sum?.id ?? 0)"
+        yourOnSumLabel.text = "Question No. \(sum?.id ?? 0):"
         if let firstSum =  sum, seconds <= totalTimeLimitInSecond {
 
-            label1.text = "\(firstSum.row1 ?? 0)"
-            label2.text = "\(firstSum.row2 ?? 0)"
-            label3.text = "\(firstSum.row3 ?? 0)"
-            label4.text = "\(firstSum.row4 ?? 0)"
+            label1.text = "  \(firstSum.row1 ?? 0)"
+            if let number = firstSum.row2, number >= 0 {
+                label2.text = "+ \(number)"
+            } else {
+                label2.text = "- \(abs(firstSum.row2 ?? 0))"
+            }
+            
+//            if let number = firstSum.row3, number >= 0 {
+//                label3.text = "+ \(number)"
+//            } else {
+//                label3.text = "- \(abs(firstSum.row3 ?? 0))"
+//            }
+//
+//            if let number = firstSum.row4, number >= 0 {
+//                label4.text = "+ \(number)"
+//            } else {
+//                label4.text = "- \(abs(firstSum.row4 ?? 0))"
+//            }
+
+
+
+//            label3.text = "\(firstSum.row3 ?? 0)"
+//            label4.text = "\(firstSum.row4 ?? 0)"
 
             option1Btn.setTitle("\(firstSum.option1 ?? 0)", for: .normal)
             option2Btn.setTitle("\(firstSum.option2 ?? 0)", for: .normal)
@@ -91,6 +155,7 @@ class PracticeViewController: UIViewController {
                 pauseButtonTapped(sender: pauseBtn)
                 digitLabelStackView.isHidden = true
                 optionBtnStackView.isHidden = true
+                answerLabel.isHidden = true
                 
                 let skippedList = recordOfSum.filter { $0?.isSumSkipped == true}
                 let wrongList = recordOfSum.filter { $0?.answer != $0?.userSelectedAnswer && $0?.isSumSkipped != true}
@@ -191,6 +256,7 @@ extension PracticeViewController {
         resultStackView.isHidden = true
         digitLabelStackView.isHidden = false
         optionBtnStackView.isHidden = false
+        answerLabel.isHidden = false
     }
     
     @objc func updateTimer() {
