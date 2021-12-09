@@ -47,6 +47,7 @@ class PracticeViewController: UIViewController {
     var isTimerRunning = false //This will be used to make sure only one timer is created at a time.
     var resumeTapped = false
     var totalTimeLimitInSecond = 180
+    var refreshSumAfterSecond = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,9 +88,9 @@ class PracticeViewController: UIViewController {
         option4Btn.setTitleColor(.white, for: UIControl.State.normal)
         
         timeLabel.textColor = .white
-        startBtn.setTitleColor(.white, for: UIControl.State.normal)
-        pauseBtn.setTitleColor(.white, for: UIControl.State.normal)
-        resetBtn.setTitleColor(.white, for: UIControl.State.normal)
+        startBtn.setTitleColor(.black, for: UIControl.State.normal)
+        pauseBtn.setTitleColor(.black, for: UIControl.State.normal)
+        resetBtn.setTitleColor(.black, for: UIControl.State.normal)
         
         resultCorrectAnswerlabel.textColor = .white
         resultWrongAnswerlabel.textColor = .white
@@ -109,8 +110,8 @@ class PracticeViewController: UIViewController {
         option4Btn.layer.borderColor = UIColor.green.cgColor
         option4Btn.layer.borderWidth = 2.0
         
-        label3.isHidden = true
-        label4.isHidden = true
+//        label3.isHidden = true
+//        label4.isHidden = true
     }
     
     func setupDataOnUI(sum: Sum?) {
@@ -124,17 +125,17 @@ class PracticeViewController: UIViewController {
                 label2.text = "- \(abs(firstSum.row2 ?? 0))"
             }
             
-//            if let number = firstSum.row3, number >= 0 {
-//                label3.text = "+ \(number)"
-//            } else {
-//                label3.text = "- \(abs(firstSum.row3 ?? 0))"
-//            }
-//
-//            if let number = firstSum.row4, number >= 0 {
-//                label4.text = "+ \(number)"
-//            } else {
-//                label4.text = "- \(abs(firstSum.row4 ?? 0))"
-//            }
+            if let number = firstSum.row3, number >= 0 {
+                label3.text = "+ \(number)"
+            } else {
+                label3.text = "- \(abs(firstSum.row3 ?? 0))"
+            }
+
+            if let number = firstSum.row4, number >= 0 {
+                label4.text = "+ \(number)"
+            } else {
+                label4.text = "- \(abs(firstSum.row4 ?? 0))"
+            }
 
 
 
@@ -260,11 +261,14 @@ extension PracticeViewController {
     }
     
     @objc func updateTimer() {
-        seconds += 1     //This will decrement(count down)the seconds.
+        seconds += refreshSumAfterSecond     //This will decrement(count down)the seconds.
         timeLabel.text = timeString(time: TimeInterval(seconds)) //"\(seconds)" //This will update the label.
         if totalTimeLimitInSecond <= seconds {
             setupDataOnUI(sum: nil)
         }
+//        else {
+//            onClickAnswerBtn(sender: UIButton())
+//        }
 
     }
     
